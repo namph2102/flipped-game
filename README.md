@@ -3,10 +3,10 @@
 <ul>
 <li>
 <h2>Trang login</h2>
-  <img src="/logo.png"/>
+  <img src="/image/logo.png"/>
 </li>
 <li>
 <h2>Trang chơi game</h2>
- <img src="/latthe1.png"/>
+ <img src="/image/latthe1.png"/>
 </li>
 </ul>
