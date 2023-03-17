@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="/image/logo.jpg" type="image/x-icon" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+      integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>ASM</title>
+  </head>
+  <body>
+    <!-- box message -->
+    <div class="modal_toast">
+      <div class="toast__content">
+        <span class="toast__message">Message Helllo Bạn</span>
+      </div>
+    </div>
+    <div class="app container">
+      <header>
+        <div class="gameheader hidden">
+          <div class="gameheader__item gameheader--level">
+            <img src="/image/level-up.png" alt="" />
+            <input type="text" class="levelup" value="1" name="level" />
+            <span class="des">Level</span>
+          </div>
+          <div class="gameheader__item gameheader--timeout">
+            <img src="/image/clock.png" alt="" />
+            <input readonly type="text" class="timeout" value="02:00" />
+            <span class="des">Thời gian</span>
+          </div>
+
+          <div class="gameheader__item gameheader--code">
+            <img src="/image/favourites.png" alt="" />
+            <input readonly class="score" type="text" value="12" />
+            <span class="des">Điểm</span>
+          </div>
+        </div>
+        <img class="logo d-md-block d-none" src="/image/logo.jpg" alt="" />
+        <form id="login" class="login">
+          <h1 class="login-title text-center text-light text-animation">
+            <span>FLIPPED</span> <span>GAME</span>
+          </h1>
+          <input name="username" required placeholder="Nhập tài khoản ...." type="text" />
+          <input name="password" required type="password" placeholder="Nhập mật khẩu ...." />
+          <button>Đăng nhập <i class="fa-solid fa-arrow-right-to-bracket"></i></button>
+        </form>
+        <div class="settings hidden">
+          <!-- <img src="/image/settings.png" alt="" />-->
+
+          <div id="viewhistory" class="gameheader__item d-inline-block">
+            <img class="mx-3" src="/image/games/history.png" alt="History" />
+            <span class="des" style="left: -20px">Lịch sử</span>
+          </div>
+          <a href="javascript:location.reload(true)">
+            <div class="gameheader__item d-inline-block">
+              <img title="LogOut" src="/image/logout.png" alt="Logout" />
+              <span class="des" style="left: -25px">Đăng xuất</span>
+            </div>
+          </a>
+        </div>
+      </header>
+      <main>
+        <div class="level__container hidden">
+          <h1>TÌM HÌNH GIỐNG NHAU</h1>
+          <section class="level__content">
+            <button>1x8</button>
+            <button>2x8</button>
+            <button>3x8</button>
+            <button>4x8</button>
+            <button>5x8</button>
+            <button>6x8</button>
+          </section>
+        </div>
+
+        <div id="level__container">
+          <!-- <div class="scene scene--card">
+            <div class="card">
+              <div class="card__face card__face--front">
+                <img src="/image/games/0.png" alt="" />
+              </div>
+              <div class="card__face card__face--back">
+                <img src="/image/games/1.jpg" alt="" />
+              </div>
+            </div>
+          </div> -->
+        </div>
+      </main>
+    </div>
+
+    <section class="history hidden" id="historyContainer">
+      <h2 class="cotainer__history--header">
+        Lịch sử người chơi <button class="btn" id="btn_history_close">x</button>
+      </h2>
+
+      <div class="cotainer__history">
+        <div class="cotainer__history--title">
+          <div>#</div>
+          <div>Cấp độ</div>
+          <div>Tốc độ</div>
+          <div>Điểm</div>
+          <div>Kết quả</div>
+          <div>Thời gian</div>
+        </div>
+        <div class="cotainer__history--list">
+          <!-- <ul class="cotainer__history--body">
+            <li>1</li>
+            <li>
+              <img src="/image/level-up.png" alt="" />
+              <span class="ms-2 fs-bold fs-4 text-warning">1</span>
+            </li>
+            <li>03:04</li>
+            <li>12</li>
+            <li><img src="/image/games/lose.png" alt="" /></li>
+            <li>12:03:12 16/03/2022</li>
+          </ul> -->
+        </div>
+      </div>
+    </section>
+    <audio src="/image/games/win.mp3" type="audio/ogg"></audio>
+  </body>
+  <script src="asm.js"></script>
+</html>
