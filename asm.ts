@@ -171,7 +171,7 @@ if (localHistory.length >= 8) {
 function renderInitHistory(localHistory: HistoryType[]) {
   localHistory.map((history: HistoryType) => displayHisroty(history, false));
 }
-
+let idTimeCount: any;
 class App {
   // xử lý Khi lật thẻ quá nhanh
   private timeEnd: number = SETTINGS.TIME_LEVEL;
@@ -217,7 +217,7 @@ class App {
     scoreContainer.value = account.score;
     let totalTime = this.timeEnd * level;
     // box time out;
-    const idTimeCount = setInterval(() => {
+    idTimeCount = setInterval(() => {
       if (this.isEndGame) {
         clearInterval(idTimeCount);
         this.isEndGame = false;
@@ -271,7 +271,7 @@ class App {
           if (this.totalFippled >= account.level * SETTINGS.CART_ONE_LEVEL) {
             this.isEndGame = true;
             this.isWin = true;
-
+            clearInterval(idTimeCount);
             if (account.level > Math.floor(SETTINGS.TOTAL_CART / SETTINGS.CART_ONE_LEVEL)) {
               account.level = 1;
               gameMessage(`Quay lại Level ${account.level} nha!`, 2000);
@@ -329,6 +329,7 @@ class App {
     this.isWin = false;
     this.isEndGame = true;
     this.handleGameFishised();
+    clearInterval(idTimeCount);
     playAudio(SETTINGS.MUSIC_LOST);
     gameMessage(`Bạn đã thua cuộc - Bạn sẽ chơi lại sau ${SETTINGS.TIME_PLAY_GAIN}s`, 2000);
     const idRenderMap = setTimeout(() => {
