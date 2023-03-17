@@ -1,6 +1,6 @@
 # flipped-game
 
-<h1>Code with typescript - HTML - CSS || DEMO LINK : <a href="https://latthe.namph.tech/" target="_blank">Flipped Game</a></h1>
+<h1>Code with TYPESCRIPT - HTML - CSS || DEMO LINK : <a href="https://latthe.namph.tech/" target="_blank">Flipped Game</a></h1>
 <p>Giải trí là chính</p>
 <ul>
   <li>
