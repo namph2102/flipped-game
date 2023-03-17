@@ -132,6 +132,7 @@ else {
 function renderInitHistory(localHistory) {
     localHistory.map(function (history) { return displayHisroty(history, false); });
 }
+var idTimeCount;
 var App = /** @class */ (function () {
     function App() {
         var _this = this;
@@ -167,7 +168,7 @@ var App = /** @class */ (function () {
         scoreContainer.value = account.score;
         var totalTime = this.timeEnd * level;
         // box time out;
-        var idTimeCount = setInterval(function () {
+        idTimeCount = setInterval(function () {
             if (_this.isEndGame) {
                 clearInterval(idTimeCount);
                 _this.isEndGame = false;
@@ -220,6 +221,7 @@ var App = /** @class */ (function () {
                     if (_this.totalFippled >= account.level * SETTINGS.CART_ONE_LEVEL) {
                         _this.isEndGame = true;
                         _this.isWin = true;
+                        clearInterval(idTimeCount);
                         if (account.level > Math.floor(SETTINGS.TOTAL_CART / SETTINGS.CART_ONE_LEVEL)) {
                             account.level = 1;
                             gameMessage("Quay l\u1EA1i Level ".concat(account.level, " nha!"), 2000);
@@ -278,6 +280,7 @@ var App = /** @class */ (function () {
         this.isWin = false;
         this.isEndGame = true;
         this.handleGameFishised();
+        clearInterval(idTimeCount);
         playAudio(SETTINGS.MUSIC_LOST);
         gameMessage("B\u1EA1n \u0111\u00E3 thua cu\u1ED9c - B\u1EA1n s\u1EBD ch\u01A1i l\u1EA1i sau ".concat(SETTINGS.TIME_PLAY_GAIN, "s"), 2000);
         var idRenderMap = setTimeout(function () {
