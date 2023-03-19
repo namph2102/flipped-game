@@ -1,7 +1,8 @@
 # flipped-game
 
-<h1>Code with TYPESCRIPT - HTML - CSS || DEMO LINK : <a href="https://latthe.namph.tech/" target="_blank">Flipped Game</a></h1>
-<p>Giải trí là chính</p>
+<h2>Code with TYPESCRIPT - HTML - CSS (web tĩnh) </h1>
+<p>Demo Link : <a href="https://latthe.namph.tech/" target="_blank">Flipped Game</a></p>
+
 <ul>
   <li>
     <h2>Trang login</h2>
